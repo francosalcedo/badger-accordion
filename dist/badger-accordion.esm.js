@@ -292,6 +292,8 @@ function () {
 
 
       this._finishInitalisation();
+
+      console.log("Loggin");
     }
     /**
      *  INSERT DATA ATTRS

@@ -314,6 +314,8 @@ var badgerAccordion = createCommonjsModule(function (module, exports) {
 
 
           this._finishInitalisation();
+
+          console.log("Loggin");
         }
         /**
          *  INSERT DATA ATTRS
@@ -710,13 +712,22 @@ var badgerAccordion = createCommonjsModule(function (module, exports) {
 });
 
 // ================================
-// const accordionDomNode = document.querySelector('.js-badger-accordion');
-// const accordion = new BadgerAccordion(accordionDomNode);
 
+var accordionDomNode = document.querySelector('.js-badger-accordion');
+var accordion = new badgerAccordion(accordionDomNode);
 /* eslint-disable no-console */
-// console.log(accordion.getState([0]));
-// accordion.open(0); // Opens the first accordion panel
-// Creating a new instance of the accordion usign DOM node
+
+console.log(accordion.getState([0])); // accordion.open(0); // Opens the first accordion panel
+
+var testEl = document.querySelector('.js-test-init-method');
+testEl.style.height = '100vh';
+testEl.style.background = 'red';
+setTimeout(function () {
+  // accordion.init();
+  accordion._setPanelHeight();
+
+  console.log("timeout");
+}, 3000); // Creating a new instance of the accordion usign DOM node
 // ================================
 // const accordions = document.querySelectorAll('.js-badger-accordion');
 // Array.from(accordions).forEach((accordion) => {
@@ -727,12 +738,12 @@ var badgerAccordion = createCommonjsModule(function (module, exports) {
 // });
 // Creating a new instance of the accordion usign CSS selector
 // ================================
-
-var accordionCssSelector = new badgerAccordion('.js-badger-accordion'); // API Examples
+// const accordionCssSelector = new BadgerAccordion('.js-badger-accordion');
+// API Examples
 
 /* eslint-disable no-console */
-
-console.log(accordionCssSelector.getState([0])); // accordionCssSelector.open( 0 );
+// console.log(accordionCssSelector.getState([0]));
+// accordionCssSelector.open( 0 );
 
 })));
 //# sourceMappingURL=app.js.map

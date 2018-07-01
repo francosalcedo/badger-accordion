@@ -101,6 +101,8 @@ class BadgerAccordion {
 
         // Adds class to accordion for initalisation
         this._finishInitalisation();
+
+        console.log("Loggin");
     }
 
 

@@ -13,7 +13,22 @@ const accordion = new BadgerAccordion(accordionDomNode);
 console.log(accordion.getState([0]));
 // accordion.open(0); // Opens the first accordion panel
 
+// Seletcing element to mess with
+const testEl = document.querySelector('.js-test-init-method');
 
+// Adding some height to it and a background
+testEl.style.height = '100vh';
+testEl.style.background = 'red';
+
+// You can either reinitalise or just recalcuate the height
+// which I'd recommend for your use case.
+
+setTimeout(function () {
+	// accordion.init();
+	accordion._setPanelHeight();
+
+	console.log("timeout");
+}, 3000);
 
 
 // Creating a new instance of the accordion usign DOM node
