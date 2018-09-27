@@ -41,6 +41,7 @@ class BadgerAccordion {
             // toggleEl:            // If you want to use a different element to trigger the accordion
         };
 
+
         // Options
         this.settings = Object.assign({}, defaults, options);
 
@@ -463,12 +464,15 @@ class BadgerAccordion {
     calculatePanelHeight(panel) {
         const panelInner = panel.querySelector(this.settings.panelInnerClass);
 
-        let activeHeight = panelInner.offsetHeight;
-
-        return panel.style.maxHeight = `${activeHeight}px`;
+        panel.addEventListener('transitionend', function() {
+            panel.style.maxHeight = `${panelInner.offsetHeight}px`;
+        }.bind(this));
     }
 
 
+    waitExpanded(panel) {
+
+    }
 
     /**
      *  CALCULATE PANEL HEIGHT
